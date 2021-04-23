@@ -1,0 +1,89 @@
+<mvc:View
+    controllerName="leadtable.controller.TLeadTable"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+                        <Table id="idProductsTable"
+                            inset="false"
+                            items="{
+                                path: '/LeadCollection',
+                                sorter: {
+                                    path: 'ID'
+                                }
+                            }">
+                            <headerToolbar>
+                                <OverflowToolbar>
+                                    <content>
+                                    </content>
+                                </OverflowToolbar>
+                            </headerToolbar>
+                            <infoToolbar>
+                                <OverflowToolbar>
+                                    <Label text="{i18n>Lead.table.toolbar.Info}"/>
+                                </OverflowToolbar>
+                            </infoToolbar>
+                            <columns>
+                                <Column
+                                    width="12em">
+                                    <Text text="{i18n>Lead.table.col.LeadID}" />
+                                </Column>
+                                <Column
+                                    width="12em">
+                                    <Text text="{i18n>Lead.table.col.Name}" />
+                                </Column>
+                                <Column
+                                    minScreenWidth="Tablet"
+                                    demandPopin="true">
+                                    <Text text="{i18n>Lead.table.col.PrimaryContact}" />
+                                </Column>
+                                
+                                <Column
+                                    minScreenWidth="Desktop"
+                                    demandPopin="true"
+                                    hAlign="End">
+                                    <Text text="{i18n>Lead.table.col.Company}" />
+                                </Column>
+                                <Column
+                                    minScreenWidth="Desktop"
+                                    demandPopin="true">
+                                    <Text text="{i18n>Lead.table.col.ApprovalStatus}" />
+                                </Column>
+                                <Column
+                                    minScreenWidth="Desktop"
+                                    demandPopin="true">
+                                    <Text text="{i18n>Lead.table.col.Owner}" />
+                                </Column>
+                                <Column
+                                    minScreenWidth="Desktop"
+                                    demandPopin="true" 
+                                    hAlign="End">
+                                    <Text text="{i18n>Lead.table.col.Status}" />
+                                </Column>
+                            </columns>
+                            <items>
+                                <ColumnListItem>
+                                    <cells>
+                                        <Text text="{ID}" />
+                                        <Text text="{Name}" />
+                                        <Text text="{AccountPartyName}" />
+                                        <Text text="{Company}" /> 
+                                        <Text text="{ApprovalStatusCodeText}" /> 
+                                        <Text text="{OwnerPartyName}" /> 
+                                        <Text text="{UserStatusCodeText}" />
+                                        
+                                    </cells>
+                                </ColumnListItem>
+                            </items>
+                        </Table>
+                    </content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
